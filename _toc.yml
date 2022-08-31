@@ -5,4 +5,14 @@ format: jb-book
 root: intro
 chapters:
 - file: caps/0_preliminares
-- file: caps/1_modelos
+- file: caps/1_modelo_er
+- file: caps/2_modelo_r
+- file: caps/3_create_insert
+- file: caps/4_select
+- file: caps/5_update_delete
+- file: caps/6_joins
+- file: caps/7_sp
+- file: caps/8_func
+- file: caps/9_export
+- file: caps/10_python
+- file: caps/11_no_sql

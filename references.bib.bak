@@ -1,4 +1,4 @@
-@book{silberschatEA2006,
+@Book{silberschatEA2006,
   author    = {Silberschatz, Abraham and Korth, Henry F. and Sudarshan, S.},
   editor    = {Sánchez González, Carmelo},
   publisher = {McGraw-Hill Interamericana de España S.L.},
@@ -6,6 +6,25 @@
   year      = {2006},
   isbn      = {9788448146443},
   pages     = {944},
+}
+
+@Book{beaulieu2020,
+  author    = {Beaulieu, Alan},
+  publisher = {O'Reilly Media, Incorporated},
+  title     = {Learning {SQL}. {G}enerate, manipulate, and retrieve data},
+  year      = {2020},
+  isbn      = {9781492057611},
+  pages     = {380},
+  subtitle  = {Generate, Manipulate, and Retrieve Data},
+}
+
+@Misc{,
+  author       = {Salvador Pozo},
+  howpublished = {\url{https://conclase.net/mysql/curso/cap0}},
+  month        = mar,
+  title        = {Curso de {MySQL}},
+  year         = {2004},
+  url          = {https://conclase.net/mysql/curso/cap0},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
