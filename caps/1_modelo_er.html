@@ -598,31 +598,67 @@ title="Print to PDF"
 <li><p>[1 punto] Subir esta descripción en un archivo <code class="docutils literal notranslate"><span class="pre">markdown</span></code> o <code class="docutils literal notranslate"><span class="pre">PDF</span></code> nombrado claramente (tarea 1 o algo por el estilo).</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="c1">### Ejemplo</span>
+### Ejemplo
 
+%flowchart TB
+%  aT0([Id]) --- Torneo
+%  aT1([Nombre]) --- Torneo
+%  aT2([Inicio]) --- Torneo
+%  aT3([Fin]) --- Torneo
+%  aT4([Calle]) --- Torneo
+%  aT5([Número]) --- Torneo
+%  aT6([Colonia]) --- Torneo
+%  aT7([Municipio]) --- Torneo
+%  aT8([Estado]) --- Torneo
+%  aT9([País]) --- Torneo
+%
+%  Torneo --- rTP{Tiene}
+%  rTP{Tiene} --- Partido
+%
+%  aP1([Id Equipo visitante]) --- Partido
+%  aP2([Id Equipo local]) --- Partido
+%  aP3([Fecha y hora]) --- Partido
+%  aP4([Resultado]) --- Partido
+%  
+%  Partido --- r3{Tiene}
+%  r3{Tiene} --- Gol
+%
+%  aE0([Id]) --- Equipo
+%  aE1([Nombre]) --- Equipo
+%  aE2([Logo]) --- Equipo
+%  aE3([Color]) --- Equipo
+%
+%  Partido --- rPE{Recibe}
+%  rPE{Recibe} ---  Equipo
+%
+%  Partido --- rPE2{Visita}
+%  rPE2{Visita} ---  Equipo
+%
+%  aJ0([Id]) --- Jugador
+%  aJ1([Nombre]) --- Jugador
+%  aJ2([Número]) --- Jugador
+%  aJ3([Id Equipo]) --- Jugador
+%
+%  Equipo --- rEJ{Juega}
+%  rEJ{Juega} --- Jugador
+%
+%  aG1([Id Jugador]) --- Gol
+%  aG2([Id Partido]) --- Gol
+%
+%  aG3([Tiempo]) --- rJG
+%  Jugador --- rJG{Mete}
+%  rJG{Mete} --- Gol
+%
+%  Jugador --- rJG2{Ataja}
+%  rJG2{Ataja} --- Gol
+%
+%  aG4([Tiempo]) --- rJG2
 
+```{figure} ../imgs/er_ejemplo.svg
+:name: fig:e-r:ejemplo
 
-<span class="o">-</span> <span class="n">Equipo</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">nombre</span> <span class="p">(</span><span class="n">texto</span><span class="p">),</span>
-    <span class="o">-</span> <span class="n">logo</span> <span class="p">(</span><span class="n">imagen</span><span class="p">),</span>
-    <span class="o">-</span> <span class="n">color</span> <span class="p">(</span><span class="n">texto</span><span class="p">)</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">Jugador</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">nombre</span> <span class="p">(</span><span class="n">texto</span><span class="p">),</span>
-    <span class="o">-</span> <span class="n">número</span> <span class="p">(</span><span class="n">entero</span><span class="p">),</span>
-    <span class="o">-</span> <span class="n">Equipo</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">Partido</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">Equipo</span> <span class="n">visitante</span><span class="p">,</span>
-    <span class="o">-</span> <span class="n">Equipo</span> <span class="n">local</span><span class="p">,</span>
-    <span class="o">-</span> <span class="n">fecha</span> <span class="p">(</span><span class="n">fecha</span> <span class="n">y</span> <span class="n">hora</span><span class="p">),</span>
-    <span class="o">-</span> <span class="n">resultado</span> <span class="p">(</span><span class="n">texto</span><span class="p">)</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">Gol</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">Partido</span><span class="p">,</span>
-    <span class="o">-</span> <span class="n">Jugador</span><span class="p">,</span>
-    <span class="o">-</span> <span class="n">tiempo</span> <span class="p">(</span><span class="n">hora</span><span class="p">)</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">Salvada</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">Partido</span><span class="p">,</span>
-    <span class="o">-</span> <span class="n">Jugador</span><span class="p">,</span>
-    <span class="o">-</span> <span class="n">tiempo</span> <span class="p">(</span><span class="n">hora</span><span class="p">)</span><span class="o">.</span>
+Modelo e-r de torneos de lacrosse.
+```
 </pre></div>
 </div>
 </section>
