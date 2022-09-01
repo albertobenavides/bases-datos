@@ -9,10 +9,9 @@ chapters:
 - file: caps/2_modelo_r
 - file: caps/3_create_insert
 - file: caps/4_select
-- file: caps/5_update_delete
-- file: caps/6_joins
-- file: caps/7_sp
-- file: caps/8_func
-- file: caps/9_export
-- file: caps/10_python
-- file: caps/11_no_sql
+- file: caps/5_export
+- file: caps/6_errors
+- file: caps/7_joins
+- file: caps/8_sp
+- file: caps/9_python
+- file: caps/10_no_sql
