@@ -423,6 +423,11 @@ title="Print to PDF"
      Instrucciones
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -487,6 +492,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#instrucciones">
      Instrucciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
     </a>
    </li>
   </ul>
@@ -597,69 +607,16 @@ title="Print to PDF"
 <li><p>[9 puntos] Convierte tu base de datos no estructurada en un modelo entidad-relación, representándolo con un diagrama entidad-relación. Usa nodos con figuras correctas y aristas claramente señaladas con los números correspondientes para las relaciones.</p></li>
 <li><p>[1 punto] Subir esta descripción en un archivo <code class="docutils literal notranslate"><span class="pre">markdown</span></code> o <code class="docutils literal notranslate"><span class="pre">PDF</span></code> nombrado claramente (tarea 1 o algo por el estilo).</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-### Ejemplo
-
-%flowchart TB
-%  aT0([Id]) --- Torneo
-%  aT1([Nombre]) --- Torneo
-%  aT2([Inicio]) --- Torneo
-%  aT3([Fin]) --- Torneo
-%  aT4([Calle]) --- Torneo
-%  aT5([Número]) --- Torneo
-%  aT6([Colonia]) --- Torneo
-%  aT7([Municipio]) --- Torneo
-%  aT8([Estado]) --- Torneo
-%  aT9([País]) --- Torneo
-%
-%  Torneo --- rTP{Tiene}
-%  rTP{Tiene} --- Partido
-%
-%  aP1([Id Equipo visitante]) --- Partido
-%  aP2([Id Equipo local]) --- Partido
-%  aP3([Fecha y hora]) --- Partido
-%  aP4([Resultado]) --- Partido
-%  
-%  Partido --- r3{Tiene}
-%  r3{Tiene} --- Gol
-%
-%  aE0([Id]) --- Equipo
-%  aE1([Nombre]) --- Equipo
-%  aE2([Logo]) --- Equipo
-%  aE3([Color]) --- Equipo
-%
-%  Partido --- rPE{Recibe}
-%  rPE{Recibe} ---  Equipo
-%
-%  Partido --- rPE2{Visita}
-%  rPE2{Visita} ---  Equipo
-%
-%  aJ0([Id]) --- Jugador
-%  aJ1([Nombre]) --- Jugador
-%  aJ2([Número]) --- Jugador
-%  aJ3([Id Equipo]) --- Jugador
-%
-%  Equipo --- rEJ{Juega}
-%  rEJ{Juega} --- Jugador
-%
-%  aG1([Id Jugador]) --- Gol
-%  aG2([Id Partido]) --- Gol
-%
-%  aG3([Tiempo]) --- rJG
-%  Jugador --- rJG{Mete}
-%  rJG{Mete} --- Gol
-%
-%  Jugador --- rJG2{Ataja}
-%  rJG2{Ataja} --- Gol
-%
-%  aG4([Tiempo]) --- rJG2
-
-```{figure} ../imgs/er_ejemplo.svg
-:name: fig:e-r:ejemplo
-
-Modelo e-r de torneos de lacrosse.
-```
-</pre></div>
+</section>
+<section id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Aquí se puede ver el diagrama e-r del ejemplo de lacrosse.</p>
+<div class="full-width docutils">
+<figure class="align-default" id="fig-e-r-ejemplo">
+<img alt="../_images/er_ejemplo.svg" src="../_images/er_ejemplo.svg" /><figcaption>
+<p><span class="caption-number">Figura 6 </span><span class="caption-text">Modelo e-r de torneos de lacrosse.</span><a class="headerlink" href="#fig-e-r-ejemplo" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 </div>
 </section>
 </section>
