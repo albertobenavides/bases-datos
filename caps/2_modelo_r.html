@@ -430,6 +430,16 @@ title="Print to PDF"
      Unión
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interseccion">
+     Intersección
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diferencia">
+     Diferencia
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -442,13 +452,6 @@ title="Print to PDF"
      Instrucciones
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#puntos-extra">
-   Puntos extra
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejemplo">
      Ejemplo
@@ -525,6 +528,16 @@ title="Print to PDF"
      Unión
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interseccion">
+     Intersección
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diferencia">
+     Diferencia
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -537,13 +550,6 @@ title="Print to PDF"
      Instrucciones
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#puntos-extra">
-   Puntos extra
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejemplo">
      Ejemplo
@@ -769,19 +775,30 @@ Match (<u>id</u>, home_team_goal, away_team_goal, country_id, league_id, home_te
 \[
 \texttt{relación1} \cup \texttt{relación2}
 \]</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>relación1 × relación2
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>relación1 ∪ relación2
 </pre></div>
 </div>
-<div class="admonition-ejercicio admonition">
-<p class="admonition-title">Ejercicio</p>
-<p>¿Qué hace este producto cartesiano?</p>
+</section>
+<section id="interseccion">
+<h3>Intersección<a class="headerlink" href="#interseccion" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Regresa las tuplas presentes en dos relaciones intersectadas. También deben tener el mismo número de atributos y dominios asociados.</p>
 <div class="math notranslate nohighlight">
 \[
-\texttt{Team} \times \texttt{Team}
+\texttt{relación1} \cap \texttt{relación2}
 \]</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Team × Team
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>relación1 ∩ relación2
 </pre></div>
 </div>
+</section>
+<section id="diferencia">
+<h3>Diferencia<a class="headerlink" href="#diferencia" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Regresa las tuplas de la primera relación, ausentes en la segunda. Deben tener el mismo número de atributos y dominios asociados.</p>
+<div class="math notranslate nohighlight">
+\[
+\texttt{relación1} - \texttt{relación2}
+\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">relación1</span> <span class="o">-</span> <span class="n">relación2</span>
+</pre></div>
 </div>
 </section>
 </section>
@@ -790,12 +807,12 @@ Match (<u>id</u>, home_team_goal, away_team_goal, country_id, league_id, home_te
 <section id="instrucciones">
 <h3>Instrucciones<a class="headerlink" href="#instrucciones" title="Enlazar permanentemente con este título">#</a></h3>
 <ol class="simple">
-<li><p>[8 puntos] Crea un diagrama relacional de tu base de datos a partir del modelo e-r de la tarea anterior.</p></li>
+<li><p>[3 puntos] Crea un esquema del modelo relacional de tu base de datos a partir del modelo e-r de la tarea anterior.</p></li>
+<li><p>[3 puntos] Representa con un diagrama relacional tu esquema del punto anterior.</p></li>
+<li><p>[4 puntos] Encuentra cuatro operaciones que vayas a usar en tu base de datos y exprésalas mediante operadores del álgebra relacional. Explica con tus propias palabras cada una de estas operaciones.</p></li>
+<li><p>Reporta tu tarea de una manera claramente identificable en el repositorio. Sube la evidencia a Nexus.</p></li>
 </ol>
 </section>
-</section>
-<section id="puntos-extra">
-<h2>Puntos extra<a class="headerlink" href="#puntos-extra" title="Enlazar permanentemente con este título">#</a></h2>
 <section id="ejemplo">
 <h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Enlazar permanentemente con este título">#</a></h3>
 </section>
