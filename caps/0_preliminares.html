@@ -231,7 +231,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/caps/0_preliminares.ipynb"
+        <a href="https://mybinder.org/v2/gh/jbenavidesv87/bases-datos/master?urlpath=tree/caps/0_preliminares.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -274,7 +274,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jbenavidesv87/bases-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -291,7 +291,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcaps/0_preliminares.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jbenavidesv87/bases-datos/issues/new?title=Issue%20on%20page%20%2Fcaps/0_preliminares.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -635,25 +635,24 @@ title="Print to PDF"
 </tbody>
 </table>
 <p>Estas tablas suelen escribirse en archivos <code class="docutils literal notranslate"><span class="pre">CSV</span></code> (siglas en inglés de <em>comma separated values</em>, o valores separados por comas) . Por ejemplo, la tabla de <code class="docutils literal notranslate"><span class="pre">usuarios</span></code> quedaría</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>nombre_usuario,correo,contraseña
-fulano,fulano@correo.com,1234
-mengana,mengana@correo.com,asdf
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_usuario</span><span class="p">,</span><span class="n">correo</span><span class="p">,</span><span class="n">contraseña</span>
+<span class="n">fulano</span><span class="p">,</span><span class="n">fulano</span><span class="nd">@correo</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="mi">1234</span>
+<span class="n">mengana</span><span class="p">,</span><span class="n">mengana</span><span class="nd">@correo</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">asdf</span>
 </pre></div>
 </div>
 </section>
 <section id="datos-semiestructurados">
 <h3>Datos semiestructurados<a class="headerlink" href="#datos-semiestructurados" title="Enlazar permanentemente con este título">#</a></h3>
 <p>Si llamamos a cada primer nivel del esquema (<code class="docutils literal notranslate"><span class="pre">usuario</span></code>, <code class="docutils literal notranslate"><span class="pre">publicaciones</span></code>, <code class="docutils literal notranslate"><span class="pre">comentarios</span></code>) <strong>entidad</strong> y a cada característica (como el <code class="docutils literal notranslate"><span class="pre">nombre</span> <span class="pre">de</span> <span class="pre">usuario</span></code>, el <code class="docutils literal notranslate"><span class="pre">título</span></code> de la <code class="docutils literal notranslate"><span class="pre">publicación</span></code>) <strong>atributo</strong>, pasamos de un modelo no estructurado a uno <strong>semiestructurado</strong> en el que hay elementos opcionales (como los <code class="docutils literal notranslate"><span class="pre">comentarios</span></code> en las <code class="docutils literal notranslate"><span class="pre">publicaciones</span></code>). Un ejemplo de notación que usa este tipo de datos son los archivos <code class="docutils literal notranslate"><span class="pre">JSON</span></code> que utilizan llaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> y pares <code class="docutils literal notranslate"><span class="pre">clave</span> <span class="pre">:</span> <span class="pre">valor</span></code> para almacenar esta información. Nuevamente, el <code class="docutils literal notranslate"><span class="pre">JSON</span></code> de <code class="docutils literal notranslate"><span class="pre">usuarios</span></code> sería</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-  nombre_usuario : &#39;fulano&#39;,
-  correo : &#39;fulano@correo.com&#39;,
-  contraseña : 1234
-},
-{
-  nombre_usuario : &#39;mengana&#39;,
-  correo : &#39;mengana@correo.com&#39;,
-  contraseña : asdf
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;nombre_usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fulano&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;correo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fulano@correo.com&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;contraseña&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234&quot;</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;nombre_usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mengana&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;correo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mengana@correo.com&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;contraseña&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asdf&quot;</span><span class="w"></span>
+<span class="p">}]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Esta misma información puede representarse con un <strong>grafo</strong> en el que cada nodo sea una entidad y las relaciones entre ellos las aristas.</p>
