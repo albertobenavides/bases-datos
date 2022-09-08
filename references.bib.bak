@@ -1,8 +1,8 @@
 @Book{silberschatEA2006,
   author    = {Silberschatz, Abraham and Korth, Henry F. and Sudarshan, S.},
+  title     = {Fundamentos de bases de datos, {Q}uinta edición},
   editor    = {Sánchez González, Carmelo},
   publisher = {McGraw-Hill Interamericana de España S.L.},
-  title     = {Fundamentos de bases de datos, {Q}uinta edición},
   year      = {2006},
   isbn      = {9788448146443},
   pages     = {944},
@@ -10,21 +10,35 @@
 
 @Book{beaulieu2020,
   author    = {Beaulieu, Alan},
-  publisher = {O'Reilly Media, Incorporated},
   title     = {Learning {SQL}. {G}enerate, manipulate, and retrieve data},
+  publisher = {O'Reilly Media, Incorporated},
   year      = {2020},
   isbn      = {9781492057611},
   pages     = {380},
   subtitle  = {Generate, Manipulate, and Retrieve Data},
 }
 
-@Misc{,
-  author       = {Salvador Pozo},
-  howpublished = {\url{https://conclase.net/mysql/curso/cap0}},
-  month        = mar,
-  title        = {Curso de {MySQL}},
-  year         = {2004},
-  url          = {https://conclase.net/mysql/curso/cap0},
+@Misc{conclase2004,
+  author = {Salvador Pozo},
+  month  = mar,
+  title  = {Curso de {MySQL}},
+  year   = {2004},
+  url    = {https://conclase.net/mysql/curso/cap0},
+}
+
+@Misc{sqlite,
+  author = {SQLite Consortium},
+  title  = {Documentation},
+  url    = {https://www.sqlite.org/docs.html},
+}
+
+@Book{debarros2018,
+  author    = {DeBarros, Anthony},
+  publisher = {No Starch Press},
+  title     = {Practical {SQL}: {A} beginner's guide to storytelling with data},
+  year      = {2018},
+  isbn      = {9781593278274},
+  pages     = {392},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
