@@ -8,8 +8,8 @@ chapters:
 - file: caps/1_modelo_er
 - file: caps/2_modelo_r
 - file: caps/3_create_insert
-- file: caps/4_select
-- file: caps/5_export
+- file: caps/4_export
+- file: caps/5_select
 - file: caps/6_errors
 - file: caps/7_joins
 - file: caps/8_sp
