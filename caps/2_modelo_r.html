@@ -140,13 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4_select.html">
-   Consultas
+  <a class="reference internal" href="4_export.html">
+   Exportar e importar
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="5_export.html">
-   Exportar e importar
+  <a class="reference internal" href="5_select.html">
+   Consultas
   </a>
  </li>
  <li class="toctree-l1">
@@ -628,7 +628,7 @@ D_\texttt{pan} \times D_{\texttt{carne}} \times D_{\texttt{queso}}.
 <h2>Representación<a class="headerlink" href="#representacion" title="Enlazar permanentemente con este título">#</a></h2>
 <p>En el modelo relacional se pueden representar las bases de datos como <strong>esquemas</strong>, tal como el que aparece a continuación.</p>
 <pre>
-Relación1(<u>clave_primaria1</u> atributo1, atributo2, ..., clave_foránea_relación3)
+Relación1(<u>clave_primaria1</u> atributo1, atributo2, ...)
 Relación2(<u>clave_primaria2</u>, atributo3, ..., clave_foránea_relación1)
 Relación3(<u>clave_primaria3</u>, atributo4, ..., clave_foránea_relación1)
 Relación1_relación2(<u>clave_foránea_relación1</u>, <u>clave_foránea_relación1</u>, atributo5, ...)
@@ -647,8 +647,8 @@ Relación1_relación2(<u>clave_foránea_relación1</u>, <u>clave_foránea_relaci
 </li>
 <li><p>se establecen por las claves foráneas de las relaciones. O sea,</p>
 <ul class="simple">
-<li><p>la <code class="docutils literal notranslate"><span class="pre">relación1</span></code> con la <code class="docutils literal notranslate"><span class="pre">relación2</span></code> forman una interrelación <strong>uno a muchos</strong>;</p></li>
-<li><p>la <code class="docutils literal notranslate"><span class="pre">relación1</span></code> con la <code class="docutils literal notranslate"><span class="pre">relación3</span></code> de <strong>uno a uno</strong>;</p></li>
+<li><p>la <code class="docutils literal notranslate"><span class="pre">relación1</span></code> con la <code class="docutils literal notranslate"><span class="pre">relación2</span></code> forman una interrelación <strong>uno a uno</strong>;</p></li>
+<li><p>la <code class="docutils literal notranslate"><span class="pre">relación1</span></code> con la <code class="docutils literal notranslate"><span class="pre">relación3</span></code> de <strong>uno a muchos</strong>;</p></li>
 <li><p>y la <code class="docutils literal notranslate"><span class="pre">relación1</span></code> con la <code class="docutils literal notranslate"><span class="pre">relación4</span></code> de <strong>muchos a muchos</strong>.</p></li>
 </ul>
 </li>
@@ -680,7 +680,7 @@ Match (<u>id</u>, home_team_goal, away_team_goal, country_id, league_id, home_te
 <p>Devuelve tuplas de los atributos especificados de una relación. Si hay tuplas repetidas, sólo se conserva la primera aparición.</p>
 <div class="math notranslate nohighlight">
 \[
-\Pi_{\texttt{atributo1, atributo2, \ldots}}(\texttt{relación})
+\Pi_{\texttt{atributo1, atributo2,}\ldots}(\texttt{relación})
 \]</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">relación</span><span class="p">[</span><span class="n">atributo1</span><span class="p">,</span> <span class="n">atributo2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
@@ -815,6 +815,12 @@ Match (<u>id</u>, home_team_goal, away_team_goal, country_id, league_id, home_te
 </section>
 <section id="ejemplo">
 <h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Torneo (<u>torneo_id</u>, nombre, inicio, fin, calle, número, colonia, municipio, estado, país)</p>
+<p>Equipo (<u>equipo_id</u>, nombre, logo, color)</p>
+<p>Partido (<u>partido_id</u>, fecha, resultado, torneo_id, local_id, visitante_id)</p>
+<p>Jugador (<u>jugador_id</u>, nombre, número)</p>
+<p>Equipo_Jugador (<u>equipo_id</u>, <u>jugador_id<u>)</p>
+<p>Tiro(<u>jugador_id</u>, <u>partido_id</u>, tiempo, estado)</p>
 </section>
 </section>
 </section>

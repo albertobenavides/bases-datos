@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
-    <link rel="next" title="Consultas" href="4_select.html" />
+    <link rel="next" title="Exportar e importar" href="4_export.html" />
     <link rel="prev" title="Modelo relacional" href="2_modelo_r.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="es">
@@ -138,13 +138,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4_select.html">
-   Consultas
+  <a class="reference internal" href="4_export.html">
+   Exportar e importar
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="5_export.html">
-   Exportar e importar
+  <a class="reference internal" href="5_select.html">
+   Consultas
   </a>
  </li>
  <li class="toctree-l1">
@@ -769,6 +769,62 @@ title="Print to PDF"
 </section>
 <section id="ejemplo">
 <h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Enlazar permanentemente con este título">#</a></h3>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="n">FOREIGN_KEY_CHECKS</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">drop</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">torneo</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">torneo</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">torneo_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">nombre</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">inicio</span><span class="w"> </span><span class="kt">DATE</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">fin</span><span class="w"> </span><span class="kt">DATE</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">calle</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">numero</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">colonia</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">municipio</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">estado</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">pais</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+
+<span class="k">drop</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">equipo</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">equipo</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">equipo_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">nombre</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">logo</span><span class="w"> </span><span class="kt">BLOB</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">color</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">partido</span><span class="p">;</span><span class="w"></span>
+<span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">partido</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">partido_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">inicio</span><span class="w"> </span><span class="kt">DATETIME</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">equipo_local</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">  	</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">equipo_local</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">equipo</span><span class="p">(</span><span class="n">equipo_id</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">equipo_visitante</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">  	</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">equipo_visitante</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">equipo</span><span class="p">(</span><span class="n">equipo_id</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">torneo_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">  	</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">torneo_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">torneo</span><span class="p">(</span><span class="n">torneo_id</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">jugador</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">jugador</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">jugador_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">nombre</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">apellido_paterno</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">apellido_materno</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">partido_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">  	</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">partido_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">partido</span><span class="p">(</span><span class="n">partido_id</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">gol</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">gol</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">partido_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">  	</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">partido_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">partido</span><span class="p">(</span><span class="n">partido_id</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">jugador_id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">  	</span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">jugador_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">jugador</span><span class="p">(</span><span class="n">jugador_id</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">estado</span><span class="w"> </span><span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;mete&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ataja&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+<span class="k">SET</span><span class="w"> </span><span class="n">FOREIGN_KEY_CHECKS</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -807,10 +863,10 @@ title="Print to PDF"
             <p class="prev-next-title">Modelo relacional</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="4_select.html" title="siguiente página">
+    <a class='right-next' id="next-link" href="4_export.html" title="siguiente página">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Consultas</p>
+        <p class="prev-next-title">Exportar e importar</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
